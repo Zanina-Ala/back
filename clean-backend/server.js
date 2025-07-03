@@ -11,15 +11,15 @@ app.use(cors());
 app.use(express.json());
 
 // Connexion MongoDB à la DB `test`
-mongoose.connect("mongodb+srv://renderuser:renderpassword2025@information.8niduxu.mongodb.net/?retryWrites=true&w=majority&appName=Information")
-
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-)
+mongoose.connect("mongodb+srv://renderuser:renderpassword2025@information.8niduxu.mongodb.net/?retryWrites=true&w=majority&appName=Information", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
 .then(() => console.log("✅ Connected to MongoDB Atlas"))
 .catch((err) => console.error("❌ MongoDB Atlas Error:", err));
+
+
+
 // Une seule route pour tout envoyer
 app.post("/api/form", async (req, res) => {
   try {
