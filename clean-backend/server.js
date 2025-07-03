@@ -11,21 +11,15 @@ app.use(cors());
 app.use(express.json());
 
 // Connexion MongoDB à la DB `test`
-mongoose.connect("MONGO_URI=mongodb+srv://gg4966914:m09mjFXk0dHSrdIU@information.8niduxu.mongodb.net/?retryWrites=true&w=majority&appName=Information
-", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => {
-  console.log("✅ Connecté à MongoDB [test]");
-  app.listen(PORT, () => {
-    console.log(`🚀 Server is running on http://localhost:${PORT}`);
-  });
-})
-.catch((err) => {
-  console.error("❌ Erreur MongoDB:", err);
-});
-
+mongoose.connect(
+  "mongodb+srv://gg4966914:m09mjFXk0dHSrdIU@information.8niduxu.mongodb.net/information?retryWrites=true&w=majority&appName=Information",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+)
+.then(() => console.log("✅ Connected to MongoDB Atlas"))
+.catch((err) => console.error("❌ MongoDB Atlas Error:", err));
 // Une seule route pour tout envoyer
 app.post("/api/form", async (req, res) => {
   try {
