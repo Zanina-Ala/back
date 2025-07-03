@@ -11,8 +11,8 @@ app.use(cors());
 app.use(express.json());
 
 // Connexion MongoDB à la DB `test`
-mongoose.connect(
-  "mongodb+srv://gg4966914:m09mjFXk0dHSrdIU@information.8niduxu.mongodb.net/information?retryWrites=true&w=majority&appName=Information",
+mongoose.connect("mongodb+srv://renderuser:renderpassword2025@information.8niduxu.mongodb.net/?retryWrites=true&w=majority&appName=Information")
+
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
