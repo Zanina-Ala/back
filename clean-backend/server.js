@@ -6,6 +6,11 @@ import userInformation from "./models/userInformation.js";
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+app.listen(PORT, () => {
+  console.log(`✅ Server running on port ${PORT}`);
+});
+
+
 // Middlewares
 app.use(cors());
 app.use(express.json());
